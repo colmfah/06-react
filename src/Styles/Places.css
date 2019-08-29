@@ -1,0 +1,16 @@
+
+.thumbnails{
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+
+}
+
+.thumbnail{
+		border: 1px solid black
+
+}
+
+
+
+
+ /* Places.css file with some styles that affect the places class, giving it a grid structure, that shows 4 places per row */
