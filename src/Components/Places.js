@@ -1,5 +1,6 @@
 import React from 'react'
 import '../Styles/Places.css'
+import Favourites from './Favourites'
 
 class Places extends React.Component {
 
@@ -9,10 +10,14 @@ class Places extends React.Component {
 	render() {
 	  return (
 	    <div>
-	      <h1>{this.state.places.length}</h1>
-				<div className='thumbnails'>
-					{this.state.places.map((e,i) => <div className='thumbnail' key={i}><p>Title: {e.title}</p><p>Price: €{e.price}</p><p>Location: {e.location}</p></div>)}
-				</div>
+			<h1>{this.state.places.length}</h1>
+
+			<div className='thumbnails'>
+				{this.state.places.map((e,i) => <div className='thumbnail' key={i}><p>Title: {e.title}</p><p>Price: €{e.price}</p><p>Location: {e.location}</p></div>)}
+			</div>
+
+				<Favourites />
+
 	    </div>
 	  )
 	}
