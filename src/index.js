@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import Places from './Components/Places.js'
 import * as serviceWorker from './serviceWorker';
 
