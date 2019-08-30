@@ -1,4 +1,5 @@
 import React from 'react'
+import '../Styles/Thumbnail.css'
 class Thumbnail extends React.Component {
 
 	state = {
