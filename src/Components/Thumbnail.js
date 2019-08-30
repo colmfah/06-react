@@ -39,7 +39,7 @@ class Thumbnail extends React.Component {
 			<div className="thumbnail">
 				<p>Y{this.state.liked.toString()}</p>
 				<p>Title: {this.props.title}</p><p>Price: €{this.props.item.price}</p><p>Location: {this.props.item.location}</p>
-				<button onClick={() => this.likeUnlike(this.state.liked)}>Button</button>
+				<button className={(this.state.liked) ? 'liked' : ''} onClick={() => this.likeUnlike(this.state.liked)}>Button</button>
 			</div>
 	  )
 	}

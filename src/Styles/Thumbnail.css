@@ -1,3 +1,7 @@
 .thumbnail{
 	border: 5px solid red;
 }
+
+.liked{
+	background-color: yellow;
+}
