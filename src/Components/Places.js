@@ -5,27 +5,47 @@ import Thumbnail from './Thumbnail'
 
 class Places extends React.Component {
 
-	state = {places: [{title: 'apartment', price: 100, location: 'Dublin' }, {title: 'house' , price: 200 , location: 'London' }, {title: 'villa' , price: 300 , location: 'Paris' }, {title: 'cottage' , price: 400, location: 'Berlin' }]
+	state = {places: [
+		{title: 'apartment', price: 100, location: 'Dublin', liked: false},
+		{title: 'house' , price: 200 , location: 'London', liked: false},
+		{title: 'villa' , price: 300 , location: 'Paris', liked: false },
+		{title: 'cottage' , price: 400, location: 'Berlin', liked: false }
+	]
 	}
+
+
+toggleLike = (t) =>{
+	let places = this.state.places
+	places = places.map( e => {
+		if (t === e.title){
+			e.liked = !e.liked
+		}
+		return e
+	}
+	)
+	this.setState({
+		places:places
+	})
+
+}
+
 
 	render() {
 	  return (
-	    <div>
-			<h1>{this.state.places.length}</h1>
-
-			<div className = 'thumbnails'>
-				{this.state.places.map((place, index) => <Thumbnail key={index} item={place} />)}
+			<div>
+			    <div class='thumbnails'>
+						{this.state.places.map(	(place, i)	=> <Thumbnail key={i} place={place} toggleLike={this.toggleLike}/>)}
+					</div>
+					<Favourites />
 			</div>
-
-				<Favourites />
-
-	    </div>
 	  )
 	}
 }
 
-export default Places
 
-// <div className='thumbnails'>
-// 	{this.state.places.map((e,i) => <div className='thumbnail' key={i}><p>Title: {e.title}</p><p>Price: €{e.price}</p><p>Location: {e.location}</p></div>)}
-// </div>
+
+
+// Replace the div with a class of thumbnail written in #060203 with the Thumbnail component and move the div with a class of thumbnail into the Thumbnail component
+// Pass each element in the places array as props into the Thumbnail component
+
+export default Places
