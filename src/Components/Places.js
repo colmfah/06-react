@@ -2,6 +2,7 @@ import React from 'react'
 import '../Styles/Places.css'
 import Favourites from './Favourites'
 import Thumbnail from './Thumbnail'
+import Search from './Search'
 
 class Places extends React.Component {
 
@@ -23,7 +24,6 @@ toggleLike = (t) =>{
 		return e
 	}
 	)
-
 	this.setState({
 		places:places
 	})
@@ -33,7 +33,6 @@ toggleLike = (t) =>{
 
 	render() {
 
-
 	  return (
 			<div>
 			    <div class='thumbnails'>
@@ -41,6 +40,7 @@ toggleLike = (t) =>{
 					</div>
 					<div>
 					<Favourites favs={this.state.places.filter(place => place.liked)} toggleLike={this.toggleLike} />
+					<Search />
 				</div>
 
 
