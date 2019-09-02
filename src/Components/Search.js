@@ -11,7 +11,7 @@ class Search extends React.Component {
 						<form>
 							<label>
 								Search:
-								<input type="text" name="name" />
+								<input type="text" name="name" onChange={(e) => this.props.handleChange(e)} />
 							</label>
 						</form>
 					</div>
