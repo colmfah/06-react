@@ -1,23 +1,48 @@
 import React from 'react'
 import '../Styles/Place.css'
 
-const divStyle = {
-  backgroundImage:'url({this.state.images[0]})'
-}
-
-
 class Place extends React.Component {
 
 	state = {
 		images: [
-			'https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.jpg',
-			'https://q-ak.bstatic.com/images/hotel/max1280x900/186/186223171.jpg',
-			'https://r-ak.bstatic.com/images/hotel/max1280x900/186/186223174.jpg',
-			'https://r-ak.bstatic.com/images/hotel/max1280x900/186/186223178.jpg'
+			{
+				id: 1,
+				image: 'https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.jpg'
+			},
+			{
+				id: 2,
+				image: 'https://q-ak.bstatic.com/images/hotel/max1280x900/186/186223171.jpg'
+			},
+			{
+				id: 3,
+				image: 'https://r-ak.bstatic.com/images/hotel/max1280x900/186/186223174.jpg'
+			},
+			{
+				id:4,
+				image: 'https://r-ak.bstatic.com/images/hotel/max1280x900/186/186223178.jpg'
+			}
+
 		],
 selectedImage: 'https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.jpg'
 	}
 
+handleClick = (e) => {
+	console.log(e);
+	let selectedImage = this.state.images[e-1].image
+
+	this.setState({
+		selectedImage:selectedImage
+	})
+
+	// this.setState({
+	// 	selectedImage:selectedImage
+	// }, () => {
+	// 	console.log('selected-image-in-state', this.state.selectedImage);
+	// })
+
+}
+
+// when do i use method over function. Whats the difference?
 
 	render() {
 
@@ -26,13 +51,12 @@ selectedImage: 'https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.
 					<div className='wrap'>
 							<div className='large' style={{backgroundImage:`url(${this.state.selectedImage})`}} >
 							</div>
-
 							<div className='thumbnails'>
 
-								{this.state.images.map(	(pic) =>{
-									return <div style={{backgroundImage:`url(${pic})`}} className='thumbnail'>
+								{this.state.images.map(	(pic, i) =>{
+									return <div key={i} style={{backgroundImage:`url(${pic.image})`}} className='thumbnail' onClick={(e) => this.handleClick(pic.id)}>
 									</div>}	)}
-									
+
 							</div>
 					</div>
 		)
@@ -42,5 +66,5 @@ selectedImage: 'https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.
 
 export default Place
 
-
-						// {this.state.filteredForSearch.map(	(place, i) => <Thumbnail key={i} place={place} toggleLike={this.toggleLike}/>	)}
+// When clicking on a small image, replace the image in the large div with the one clicked on
+// Commit 060802

@@ -20,8 +20,6 @@ class Places extends React.Component {
 	]
 	}
 
-
-
 toggleLike = (t) =>{
 	let places = this.state.places
 	places = places.map( e => {

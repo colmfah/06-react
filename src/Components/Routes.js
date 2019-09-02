@@ -1,9 +1,9 @@
 import React from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import Thumbnail from './Thumbnail'
-import Favourites from './Favourites'
+// import Thumbnail from './Thumbnail'
+// import Favourites from './Favourites'
 import Places from './Places'
-import Search from './Search'
+// import Search from './Search'
 import Place from './Place'
 
 class Routes extends React.Component {
