@@ -8,7 +8,12 @@ class Search extends React.Component {
 
 	  return (
 					<div className='searchwrap'>
-						Search Bar goes here
+						<form>
+							<label>
+								Search:
+								<input type="text" name="name" />
+							</label>
+						</form>
 					</div>
 
 		)

@@ -35,13 +35,14 @@ toggleLike = (t) =>{
 
 	  return (
 			<div>
+					<Search />
 			    <div class='thumbnails'>
 						{this.state.places.map(	(place, i)	=> <Thumbnail key={i} place={place} toggleLike={this.toggleLike}/>)}
 					</div>
 					<div>
 					<Favourites favs={this.state.places.filter(place => place.liked)} toggleLike={this.toggleLike} />
-					<Search />
 				</div>
+
 
 
 			</div>
