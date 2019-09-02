@@ -12,8 +12,14 @@ class Places extends React.Component {
 		{title: 'villa' , price: 300 , location: 'Paris', liked: false },
 		{title: 'cottage' , price: 400, location: 'Berlin', liked: false }
 	],
-	filteredForSearch: []
+	filteredForSearch: [
+		{title: 'apartment', price: 100, location: 'Dublin', liked: false},
+		{title: 'house' , price: 200 , location: 'London', liked: false},
+		{title: 'villa' , price: 300 , location: 'Paris', liked: false },
+		{title: 'cottage' , price: 400, location: 'Berlin', liked: false }
+	]
 	}
+
 
 
 toggleLike = (t) =>{
@@ -73,3 +79,12 @@ export default Places
 						// 		searchValue: searchValue
 						// 	})
 						// }
+
+						// initialise=()=>{
+						// 	let filteredForSearch = this.state.places
+						// 	this.setState({
+						// 		filteredForSearch: filteredForSearch
+						// 	})
+						// }
+						//
+						// {initialise()}
