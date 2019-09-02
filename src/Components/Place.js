@@ -27,12 +27,15 @@ selectedImage: 'https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.
 	}
 
 handleClick = (e) => {
-	console.log(e);
+	let border = false
+	this.setState({
+		border:border
+	})
 	let selectedImage = this.state.images[e-1].image
-
 	this.setState({
 		selectedImage:selectedImage
 	})
+
 
 	// this.setState({
 	// 	selectedImage:selectedImage
@@ -52,9 +55,8 @@ handleClick = (e) => {
 							<div className='large' style={{backgroundImage:`url(${this.state.selectedImage})`}} >
 							</div>
 							<div className='thumbnails'>
-
 								{this.state.images.map(	(pic, i) =>{
-									return <div key={i} style={{backgroundImage:`url(${pic.image})`}} className='thumbnail' onClick={(e) => this.handleClick(pic.id)}>
+									return <div key={i} style={{backgroundImage:`url(${pic.image})`}} className={pic.image === this.state.selectedImage  ? 'displayborder thumbnail2' : 'thumbnail2'} onClick={(e) => this.handleClick(pic.id)}>
 									</div>}	)}
 
 							</div>
@@ -65,6 +67,3 @@ handleClick = (e) => {
 }
 
 export default Place
-
-// When clicking on a small image, replace the image in the large div with the one clicked on
-// Commit 060802

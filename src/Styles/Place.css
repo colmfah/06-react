@@ -9,8 +9,12 @@
 	grid-template-columns: 1fr 1fr;
 }
 
-.thumbnail{
+.thumbnail2{
 	width: 150px;
 	height: 150px;
 	background-size: cover;
+}
+
+.displayborder{
+	border: 5px solid green
 }
