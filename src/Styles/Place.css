@@ -1,0 +1,15 @@
+.large{
+	width: 50vw;
+	height: 50vh;
+}
+
+.wrap{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.thumbnail{
+	width: 150px;
+	height: 150px;
+	background-size: cover;
+}
